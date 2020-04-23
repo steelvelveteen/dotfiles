@@ -51,7 +51,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}	" auto completion, Lang servers 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'				" fuzzy search integration
 Plug 'farmergreg/vim-lastplace'
-Plug 'mhinz/vim-startify'				" cool start up screen
+"Plug 'mhinz/vim-startify'				" cool start up screen
 Plug '907th/vim-auto-save'				" auto save changes
 Plug 'tpope/vim-commentary'				" better commenting
 Plug 'tpope/vim-sensible'				" sensible defaults
@@ -59,6 +59,8 @@ Plug 'Yggdroot/indentLine'				" show indentation lines
 Plug 'justmao945/vim-clang'
 Plug 'psliwka/vim-smoothie'                           " some very smooth ass scrolling
 Plug 'herringtondarkholme/yats.vim'			" Typescript highlighting
+Plug 'omnisharp/omnisharp-vim'
+Plug 'mattn/emmet-vim'                  " emmet autocomplete for vim/neovim
 call plug#end()
 
 "Coloring
@@ -100,6 +102,9 @@ func! TrimWhiteSpace()
   %s/\s*$//
   ''
 :endfunction
+
+" Map <Ctrl+w> to ',' to switch between windows
+nnoremap , <C-w>w
 
 " Clear search highlight with c-l
 noremap <silent> <c-l> :nohls<cr><c-l>
