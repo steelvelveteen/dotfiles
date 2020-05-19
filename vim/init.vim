@@ -61,11 +61,18 @@ Plug 'psliwka/vim-smoothie'                           " some very smooth ass scr
 Plug 'herringtondarkholme/yats.vim'			" Typescript highlighting
 Plug 'omnisharp/omnisharp-vim'
 Plug 'mattn/emmet-vim'                  " emmet autocomplete for vim/neovim
+
+Plug 'jschmold/sweet-dark.vim'
 call plug#end()
 
 "Coloring
-let g:material_style='oceanic'
+"let g:material_style='oceanic'
 "set background=dark
+"" Below two lines are just to set up the theme.
+"" Comment them out for some blurred transparency
+"set termguicolors
+"colorscheme sweet_dark
+
 "colorscheme vim-material 	"" WARNING: This fucks up syntax highlighting on html files
 let g:airline_theme='material'
 
@@ -78,6 +85,11 @@ let g:yats_host_keyword = 1
 " Colors for git (especially the gutter)
 hi DiffAdd guibg='#0f111a'
 hi DiffChange guibg='#0f111a'
+
+" EMMET Config --
+" redefine trigger key from C^y to ','
+" Final trigger will be ,,
+let g:user_emmet_leader_key=','
 
 " Show line numbers
 :set number
@@ -134,7 +146,6 @@ set smarttab
 " 1 tab == 4 spaces
 set shiftwidth=4
 set tabstop=4
-
 
 " Ignore case while searching
 set ignorecase
