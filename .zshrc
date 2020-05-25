@@ -29,7 +29,7 @@ plugins=(git colored-man-pages extract sudo virtualenv zsh-autosuggestions)
 source $ZSH/oh-my-zsh.sh
 
 clear
-#archey3 -c black
+neofetch
 
 ###############################################################
 # Aliaxes
@@ -59,5 +59,3 @@ alias removebeep='sudo rmmod pcspkr'
 ###############################################################
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-# This is only for exercism cli
-export PATH=~/bin:$PATH

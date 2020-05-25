@@ -51,7 +51,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}	" auto completion, Lang servers 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'				" fuzzy search integration
 Plug 'farmergreg/vim-lastplace'
-"Plug 'mhinz/vim-startify'				" cool start up screen
+Plug 'tpope/vim-surround'                           "change surrounding parenthesis
 Plug '907th/vim-auto-save'				" auto save changes
 Plug 'tpope/vim-commentary'				" better commenting
 Plug 'tpope/vim-sensible'				" sensible defaults
@@ -61,7 +61,7 @@ Plug 'psliwka/vim-smoothie'                           " some very smooth ass scr
 Plug 'herringtondarkholme/yats.vim'			" Typescript highlighting
 Plug 'omnisharp/omnisharp-vim'
 Plug 'mattn/emmet-vim'                  " emmet autocomplete for vim/neovim
-
+Plug 'machakann/vim-highlightedyank'    " highlight yanked text
 Plug 'jschmold/sweet-dark.vim'
 call plug#end()
 
@@ -80,7 +80,7 @@ highlight Comment gui=bold                              " bold comments
 highlight Normal gui=none
 highlight NonText guibg=none
 highlight clear SignColumn                              " use number color for sign column color
-hi Search guibg=orange 
+hi Search guibg=orange
 let g:yats_host_keyword = 1
 " Colors for git (especially the gutter)
 hi DiffAdd guibg='#0f111a'
@@ -145,7 +145,7 @@ set smarttab
 
 " 1 tab == 4 spaces
 set shiftwidth=4
-set tabstop=4
+set tabstop=8
 
 " Ignore case while searching
 set ignorecase
@@ -235,4 +235,5 @@ let g:airline_right_alt_sep = ''
 let g:airline_symbols.branch = ''
 let g:airline_symbols.readonly = ''
 let g:airline_symbols.linenr = ''
-
+" git mappings
+nmap gs :G<CR>
