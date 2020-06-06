@@ -29,8 +29,6 @@ plugins=(git colored-man-pages extract sudo virtualenv zsh-autosuggestions)
 source $ZSH/oh-my-zsh.sh
 
 clear
-neofetch
-
 ###############################################################
 # Aliaxes
 # #############################################################
@@ -43,18 +41,17 @@ alias vim="nvim"
 alias neovim="nvim"
 alias cat="bat"
 alias ls="colorls"
-alias editz="vim ~/.zshrc"
-alias editx="vim ~/.Xresources"
-alias editv="vim ~/.vimrc"
-alias editnv="vim ~/.config/nvim/init.vim"
-alias sourcex="xrdb ~/.Xresources"
-alias music="mpd && ncmpcpp"
+alias edita="nvim ~/.config/alacritty/alacritty.yml"
+alias editz="nvim ~/.zshrc"
+alias editv="nvim ~/.vimrc"
+alias editnv="nvim ~/.config/nvim/init.vim"
+alias music="mpd || ncmpcpp"
 alias sourcez="source ~/.zshrc"
 alias clock="tty-clock -c -C 1 -s"
 alias repos='echo "Listing repositories ..." && cd ~/repos && ls'
-alias updateDotfilesrepo='cp ~/.zshrc ~/repos/dotfiles && cp ~/.vimrc ~/repos/dotfiles/vim && cp ~/.config/nvim/init.vim ~/repos/dotfiles/vim && cp ~/.Xresources ~/repos/dotfiles && cd ~/repos/dotfiles && gst'
+alias updateDotfilesrepo='cp ~/.zshrc ~/repos/dotfiles && cp ~/.config/nvim/init.vim ~/repos/dotfiles/vim && cp ~/.Xresources ~/repos/dotfiles && cd ~/repos/dotfiles && gst'
 alias backupdotfiles='cp ~/.config/nvim/init.vim ~/.config/nvim/init.vim.bak && cp ~/.Xresources ~/.Xresources.bak && cp ~/.zshrc ~/.zshrc.bak'
-alias gtypist='gtypist -c 5,0 --silent'
+#alias gtypist='gtypist -c 5,0 --silent'
 alias removebeep='sudo rmmod pcspkr'
 ###############################################################
 
