@@ -2,7 +2,7 @@ colors:
   # Default colors
   primary:
     # background: "#1e2127"
-    background: "#2E3440"
+    background: "#232a38"
     foreground: "#D8DEE9"
 
   # Normal colors
@@ -27,7 +27,7 @@ colors:
     cyan: "#56b6c2"
     white: "#ECEFF4"
 
-background_opacity: 0.95
+background_opacity: 0.995
 
 font:
   normal:
@@ -35,13 +35,13 @@ font:
     style: Regular
   bold:
     family: "Hack"
-    style: Bold
+    style: Regular
   italic:
     family: "Hack"
     style: Italic
   bold_italic:
     family: "Hack"
-    style: Bold Italic
+    style: Regular
 
   # Point size
   size: 11.5

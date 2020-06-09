@@ -35,46 +35,81 @@ endif
 " well... update. Duh!
 
 call plug#begin('~/.vim/plugged')
-Plug 'ryanoasis/vim-devicons'				" pretty icons everywhere
-Plug 'hzchirs/vim-material'				" material color themes
-"Plug 'jschmold/sweet-dark.vim'			" sweet dark color themes
-Plug 'junegunn/goyo.vim'				" Zen mode
-Plug 'gregsexton/MatchTag'				" highlight matching html tags
+
+Plug 'ryanoasis/vim-devicons'			" pretty icons everywhere
+Plug 'hzchirs/vim-material'			" material color themes
+Plug 'jschmold/sweet-dark.vim'			" sweet dark color themes
+Plug 'junegunn/goyo.vim'			" Zen mode
 Plug 'scrooloose/nerdtree'
 Plug 'junegunn/vim-easy-align'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'rust-lang/rust.vim'
 Plug 'townk/vim-autoclose'
-Plug 'tpope/vim-fugitive'				" git support
+Plug 'tpope/vim-fugitive'	               	" git support
 Plug 'neoclide/coc.nvim', {'branch': 'release'}	" auto completion, Lang servers ...
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'				" fuzzy search integration
+Plug 'airblade/vim-rooter'
 Plug 'farmergreg/vim-lastplace'
-Plug 'tpope/vim-surround'                           "change surrounding parenthesis
-Plug '907th/vim-auto-save'				" auto save changes
-Plug 'tpope/vim-commentary'				" better commenting
-Plug 'tpope/vim-sensible'				" sensible defaults
-Plug 'Yggdroot/indentLine'				" show indentation lines
-Plug 'justmao945/vim-clang'
-Plug 'psliwka/vim-smoothie'                           " some very smooth ass scrolling
-Plug 'herringtondarkholme/yats.vim'			" Typescript highlighting
+Plug 'tpope/vim-surround'                       "change surrounding parenthesis
+Plug '907th/vim-auto-save'			" auto save changes
+Plug 'tpope/vim-commentary'			" better commenting
+Plug 'tpope/vim-sensible'			" sensible defaults
+Plug 'Yggdroot/indentLine'                      " show indentation lines
+Plug 'justmao945/vim-clang'                     " For C/C++ code completion
+Plug 'psliwka/vim-smoothie'                     " some very smooth ass scrolling
+Plug 'herringtondarkholme/yats.vim'		" Typescript highlighting
 Plug 'omnisharp/omnisharp-vim'
-Plug 'mattn/emmet-vim'                  " emmet autocomplete for vim/neovim
-Plug 'machakann/vim-highlightedyank'    " highlight yanked text
-Plug 'jschmold/sweet-dark.vim'
+Plug 'mattn/emmet-vim'                          " emmet autocomplete for vim/neovim
+Plug 'machakann/vim-highlightedyank'            " highlight yanked text
+Plug 'voldikss/vim-floaterm'                    " a floating terminal
+Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
+Plug 'ThePrimeagen/vim-be-good'
+Plug 'omnisharp/omnisharp-vim'
+Plug 'w0rp/ale'
+Plug 'kevinhwang91/rnvimr', { 'do': 'make sync' }
+Plug 'ap/vim-css-color'                         " Self explanatory
 call plug#end()
 
 "Coloring
-"let g:material_style='oceanic'
-"set background=dark
-"" Below two lines are just to set up the theme.
-"" Comment them out for some blurred transparency
-"set termguicolors
-"colorscheme sweet_dark
-
 "colorscheme vim-material 	"" WARNING: This fucks up syntax highlighting on html files
-let g:airline_theme='material'
+
+" Settings
+syntax on
+set hidden                              " Required to keep multiple buffers open multiple buffers
+"syntax sync fromstart
+set number relativenumber
+" Set working directory is always the same as file being edited
+set autochdir
+set noerrorbells
+set visualbell
+set autowrite
+set autoindent
+set showtabline=2
+" performance tweaks
+set nocursorline
+set nocursorcolumn
+set scrolljump=5
+set lazyredraw
+set synmaxcol=180
+set re=1
+" Enable auto-indent
+set ai
+set si
+set cmdheight=2
+set expandtab
+set smarttab
+" 1 tab == 4 spaces
+set shiftwidth=4
+set tabstop=8
+set ignorecase
+set smartcase
+set hlsearch
+set incsearch
+set encoding=utf8
+set ffs=unix,dos,mac
 
 highlight Comment gui=bold                              " bold comments
 highlight Normal gui=none
@@ -87,26 +122,24 @@ hi DiffAdd guibg='#0f111a'
 hi DiffChange guibg='#0f111a'
 
 " EMMET Config --
-" redefine trigger key from C^y to ','
-" Final trigger will be ,,
-let g:user_emmet_leader_key=','
+" Final trigger will be <Tab>,,
+let g:user_emmet_leader_key='<Tab>'
+let g:user_emmet_settings = {
+    \ 'javascript.jsx' : {
+        \ 'extends': 'jsx',
+    \ },
+\}
 
-" Show line numbers
-:set number
-"" Bell
-set noerrorbells
-set visualbell
-set autowrite
-set autoindent
-set showtabline=2
+" Use the stdio version of OmniSharp-roslyn
+let g:OmniSharp_server_stdio = 1
+let g:OmniSharp_server_use_mono = 1
 
-" performance tweaks
-set nocursorline
-set nocursorcolumn
-set scrolljump=5
-set lazyredraw
-set synmaxcol=180
-set re=1
+" Config for Floaterm
+let g:floaterm_keymap_new       = '<F5>'
+let g:floaterm_keymap_kill      = '<F4>'
+let g:floaterm_wintyp           = 'floating'
+let g:floaterm_wintitle         = 0
+let g:floaterm_rootmarkers      = ['.project']
 
 " Trim whitespace with mapping
 map <F12> :call TrimWhiteSpace()<CR>
@@ -115,63 +148,37 @@ func! TrimWhiteSpace()
   ''
 :endfunction
 
+
+"""  MAPPINGS
+nmap gs :G<CR>	" git mappings
+
 " Map <Ctrl+w> to ',' to switch between windows
 nnoremap , <C-w>w
-
 " Clear search highlight with c-l
 noremap <silent> <c-l> :nohls<cr><c-l>
-
 " Braces completion
 inoremap {<Enter> {<Enter><Enter>}<Up><Tab>
-
 " Map <Space> to / (search) and Ctrl-<Space> to ? (backwards search)
 map <space> /
 map <c-space> ?
-
 " Alt + arrow keys to move line up or down
 :map <Alt><Up> dd <Down>p
+" Map F6 to NerdTree toggle
+nmap <F6> :NERDTreeToggle<CR>
+" Remove arrow keys for hard core vim usage
+noremap <Up> <nop>
+noremap <Down> <nop>
+noremap <Left> <nop>
+noremap <Right> <nop>
 
-" Enable syntax highlighting
-syntax on
-" Enable auto-indent
-set ai
-set si
-
-" Use spaces instead of tabs
-set expandtab
-
-" Be smart when using tabs
-set smarttab
-
-" 1 tab == 4 spaces
-set shiftwidth=4
-set tabstop=8
-
-" Ignore case while searching
-set ignorecase
-set smartcase
-
-" Highlight search results
-set hlsearch
-
-" Makes search act like search in modern browsers
-set incsearch
-
-" Set utf8 as standard encoding and en_US as the standard language
-set encoding=utf8
-
-" Use Unix as the standard file type
-set ffs=unix,dos,mac
-syntax sync fromstart
-" Set the cursorline
-" set cursorline
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-""" RUST development environment settings
+""" ALE Settings """
 let g:ale_fixers = {
         \'rust': ['rustfmt'],
 	\'c' : ['clang-format'],
-	\'*': ['remove_trailing_lines', 'trim_whitespace'],
+	\'*': ['remove_trailing_lines', 'trim_whitespace', 'uncrustify'],
         \'javascript': ['prettier'],
+        \'typescript': ['prettier', 'tslint'],
         \'cpp' : ['clang-format'],
         \'css' : ['prettier'],
         \'html' : ['prettier'],
@@ -185,22 +192,23 @@ let g:ale_linters = {
       \}
 
 let g:ale_rust_rls_toolchain = 'nightly-YYYY-MM-DD'
-
+let g:rustfmt_autosave = 1
 let g:ale_fix_on_save = 1
 let g:airline#extensions#ale#enabled = 1
+
+
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
-set runtimepath+=~/.vim/plugged/deoplete.nvim/
-let g:deoplete#enable_at_startup = 1
-let g:deoplete#sources = {'rust': ['ale', 'racer']}
-
+nnoremap <C-p> :GFiles<CR>
 " indentLine
 let g:indentLine_char = '▏'
 let g:indentLine_color_gui = '#363949'
 
-" Airline
+" Ranger settings
+let g:rnvimr_ex_enable=1
+
+""" Airline Settings """
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Airline
 if !exists('g:airline_symbols')
     let g:airline_symbols = {}
 endif
@@ -210,30 +218,29 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#branch#enabled=1
 
 " Airline color theme
-"let g:airline_theme='jellybeans'
-let g:airline_theme='material'
+" let g:airline_theme='material'
+" let g:airline_theme='minimalist'
+let g:airline_theme='deus'
 
 " unicode symbols
-let g:airline_left_sep = '»'
-let g:airline_left_sep = '▶'
-let g:airline_right_sep = '«'
-let g:airline_right_sep = '◀'
-let g:airline_symbols.linenr = '␊'
-let g:airline_symbols.linenr = '␤'
-let g:airline_symbols.linenr = '¶'
-let g:airline_symbols.branch = '⎇'
-let g:airline_symbols.paste = 'ρ'
-let g:airline_symbols.paste = 'Þ'
-let g:airline_symbols.paste = '∥'
-let g:airline_symbols.whitespace = 'Ξ'
+" let g:airline_left_sep = '»'
+" let g:airline_left_sep = '▶'
+" let g:airline_right_sep = '«'
+" let g:airline_right_sep = '◀'
+" let g:airline_symbols.linenr = '␊'
+" let g:airline_symbols.linenr = '␤'
+" let g:airline_symbols.linenr = '¶'
+" let g:airline_symbols.branch = '⎇'
+" let g:airline_symbols.paste = 'ρ'
+" let g:airline_symbols.paste = 'Þ'
+" let g:airline_symbols.paste = '∥'
+" let g:airline_symbols.whitespace = 'Ξ'
 
-" airline symbols
-let g:airline_left_sep = ''
-let g:airline_left_alt_sep = ''
-let g:airline_right_sep = ''
-let g:airline_right_alt_sep = ''
-let g:airline_symbols.branch = ''
-let g:airline_symbols.readonly = ''
-let g:airline_symbols.linenr = ''
-" git mappings
-nmap gs :G<CR>
+" " airline symbols
+" let g:airline_left_sep = ''
+" let g:airline_left_alt_sep = ''
+" let g:airline_right_sep = ''
+" let g:airline_right_alt_sep = ''
+" let g:airline_symbols.branch = ''
+" let g:airline_symbols.readonly = ''
+" let g:airline_symbols.linenr = ''

@@ -12,7 +12,7 @@ export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
 # Blur shit. It works!!!
-xprop -f _KDE_NET_WM_BLUR_BEHIND_REGION 32c -set _KDE_NET_WM_BLUR_BEHIND_REGION 0 -id `xdotool search --class urxvt`
+#xprop -f _KDE_NET_WM_BLUR_BEHIND_REGION 32c -set _KDE_NET_WM_BLUR_BEHIND_REGION 0 -id `xdotool search --class urxvt`
 
 # Set Spaceship ZSH as a prompt
 autoload -U promptinit; promptinit
@@ -49,7 +49,8 @@ alias music="mpd || ncmpcpp"
 alias sourcez="source ~/.zshrc"
 alias clock="tty-clock -c -C 1 -s"
 alias repos='echo "Listing repositories ..." && cd ~/repos && ls'
-alias updateDotfilesrepo='cp ~/.zshrc ~/repos/dotfiles && cp ~/.config/nvim/init.vim ~/repos/dotfiles/vim && cp ~/.Xresources ~/repos/dotfiles && cd ~/repos/dotfiles && gst'
+alias sys-repos='echo "Listing sys repositories ..." && cd ~/sys-repos && ls'
+alias updateDotfilesrepo='cp ~/.zshrc ~/repos/dotfiles && cp ~/.config/nvim/init.vim ~/repos/dotfiles/vim && cp ~/.config/alacritty/alacritty.yml ~/repos/dotfiles/alacritty && cd ~/repos/dotfiles && gst'
 alias backupdotfiles='cp ~/.config/nvim/init.vim ~/.config/nvim/init.vim.bak && cp ~/.Xresources ~/.Xresources.bak && cp ~/.zshrc ~/.zshrc.bak'
 #alias gtypist='gtypist -c 5,0 --silent'
 alias removebeep='sudo rmmod pcspkr'
