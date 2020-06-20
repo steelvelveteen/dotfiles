@@ -38,7 +38,6 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'ryanoasis/vim-devicons'			" pretty icons everywhere
 Plug 'hzchirs/vim-material'			" material color themes
-Plug 'jschmold/sweet-dark.vim'			" sweet dark color themes
 Plug 'junegunn/goyo.vim'			" Zen mode
 Plug 'scrooloose/nerdtree'
 Plug 'junegunn/vim-easy-align'
@@ -66,36 +65,33 @@ Plug 'machakann/vim-highlightedyank'            " highlight yanked text
 Plug 'voldikss/vim-floaterm'                    " a floating terminal
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
-Plug 'ThePrimeagen/vim-be-good'
+Plug 'ThePrimeagen/vim-be-good', { 'do': './install.sh' }
 Plug 'omnisharp/omnisharp-vim'
 Plug 'w0rp/ale'
 Plug 'kevinhwang91/rnvimr', { 'do': 'make sync' }
 Plug 'ap/vim-css-color'                         " Self explanatory
-call plug#end()
+Plug 'iamcco/coc-angular'
 
-"Coloring
-"colorscheme vim-material 	"" WARNING: This fucks up syntax highlighting on html files
+call plug#end()
 
 " Settings
 syntax on
 set hidden                              " Required to keep multiple buffers open multiple buffers
-"syntax sync fromstart
 set number relativenumber
-" Set working directory is always the same as file being edited
-set autochdir
+set autochdir " Set working directory is always the same as file being edited
 set noerrorbells
 set visualbell
 set autowrite
 set autoindent
 set showtabline=2
-" performance tweaks
-set nocursorline
+set cursorline
+hi CursorLine cterm=NONE ctermbg=black ctermfg=lightgrey
+hi VertSplit cterm=NONE ctermbg=darkgrey ctermfg=darkgrey
 set nocursorcolumn
 set scrolljump=5
 set lazyredraw
 set synmaxcol=180
 set re=1
-" Enable auto-indent
 set ai
 set si
 set cmdheight=2
@@ -115,8 +111,8 @@ highlight Comment gui=bold                              " bold comments
 highlight Normal gui=none
 highlight NonText guibg=none
 highlight clear SignColumn                              " use number color for sign column color
-hi Search guibg=orange
 let g:yats_host_keyword = 1
+
 " Colors for git (especially the gutter)
 hi DiffAdd guibg='#0f111a'
 hi DiffChange guibg='#0f111a'
@@ -129,10 +125,6 @@ let g:user_emmet_settings = {
         \ 'extends': 'jsx',
     \ },
 \}
-
-" Use the stdio version of OmniSharp-roslyn
-let g:OmniSharp_server_stdio = 1
-let g:OmniSharp_server_use_mono = 1
 
 " Config for Floaterm
 let g:floaterm_keymap_new       = '<F5>'
@@ -148,21 +140,17 @@ func! TrimWhiteSpace()
   ''
 :endfunction
 
-
 """  MAPPINGS
 nmap gs :G<CR>	" git mappings
-
-" Map <Ctrl+w> to ',' to switch between windows
-nnoremap , <C-w>w
 " Clear search highlight with c-l
-noremap <silent> <c-l> :nohls<cr><c-l>
+" noremap <silent> <C-l> :nohls<Cr><C-l>
 " Braces completion
 inoremap {<Enter> {<Enter><Enter>}<Up><Tab>
 " Map <Space> to / (search) and Ctrl-<Space> to ? (backwards search)
 map <space> /
 map <c-space> ?
 " Alt + arrow keys to move line up or down
-:map <Alt><Up> dd <Down>p
+map <Alt><Up> dd <Down>p
 " Map F6 to NerdTree toggle
 nmap <F6> :NERDTreeToggle<CR>
 " Remove arrow keys for hard core vim usage
@@ -170,6 +158,12 @@ noremap <Up> <nop>
 noremap <Down> <nop>
 noremap <Left> <nop>
 noremap <Right> <nop>
+nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+nmap <silent> <C-j> <Plug>(ale_next_wrap)
+nnoremap <C-p> :GFiles<CR>
+" Easy switch between windows
+" Map <Ctrl+w> to ',' to switch between windows
+nnoremap , <C-w>w
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """ ALE Settings """
@@ -196,10 +190,6 @@ let g:rustfmt_autosave = 1
 let g:ale_fix_on_save = 1
 let g:airline#extensions#ale#enabled = 1
 
-
-nmap <silent> <C-k> <Plug>(ale_previous_wrap)
-nmap <silent> <C-j> <Plug>(ale_next_wrap)
-nnoremap <C-p> :GFiles<CR>
 " indentLine
 let g:indentLine_char = '▏'
 let g:indentLine_color_gui = '#363949'
@@ -218,9 +208,7 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#branch#enabled=1
 
 " Airline color theme
-" let g:airline_theme='material'
-" let g:airline_theme='minimalist'
-let g:airline_theme='deus'
+let g:airline_theme='material'
 
 " unicode symbols
 " let g:airline_left_sep = '»'
