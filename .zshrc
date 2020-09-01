@@ -11,13 +11,15 @@ export PATH="/home/sentinel/.gem/ruby/2.6.0/bin:$PATH"
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
-# Blur shit. It works!!!
+# This is for urxvt in i3 desktop environment
+# Blur. It works!!!
 #xprop -f _KDE_NET_WM_BLUR_BEHIND_REGION 32c -set _KDE_NET_WM_BLUR_BEHIND_REGION 0 -id `xdotool search --class urxvt`
 
 # Set Spaceship ZSH as a prompt
 autoload -U promptinit; promptinit
 prompt spaceship
 ZSH_THEME="spaceship"
+SPACESHIP_TIME_SHOW="true"
 
 # Command auto-correction.
 ENABLE_CORRECTION="false"
@@ -41,7 +43,7 @@ alias vim="nvim"
 alias neovim="nvim"
 alias cat="bat"
 alias ls="colorls"
-alias py="python"
+# alias py="python"
 alias edita="nvim ~/.config/alacritty/alacritty.yml"
 alias editz="nvim ~/.zshrc"
 alias editv="nvim ~/.vimrc"

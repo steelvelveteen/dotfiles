@@ -33,7 +33,9 @@ background_opacity: 0.995
 
 font:
   normal:
+      # Suitable fonts: Hack, Hack, NotoMono Nerd Font Mono
     family: "Hack"
+    # family: "3270SemiNarrow Nerd Font Mono"
     style: Regular
   bold:
     family: "Hack"
@@ -46,7 +48,7 @@ font:
     style: Regular
 
   # Point size
-  size: 11.5
+    size: 11.5
 
   offset:
     x: 0

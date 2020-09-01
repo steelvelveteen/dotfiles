@@ -64,13 +64,14 @@ Plug 'mattn/emmet-vim'                          " emmet autocomplete for vim/neo
 Plug 'machakann/vim-highlightedyank'            " highlight yanked text
 Plug 'voldikss/vim-floaterm'                    " a floating terminal
 Plug 'pangloss/vim-javascript'
-Plug 'mxw/vim-jsx'
 Plug 'ThePrimeagen/vim-be-good', { 'do': './install.sh' }
 Plug 'omnisharp/omnisharp-vim'
 Plug 'w0rp/ale'
 Plug 'kevinhwang91/rnvimr', { 'do': 'make sync' }
 Plug 'ap/vim-css-color'                         " Self explanatory
 Plug 'iamcco/coc-angular'
+Plug 'leafgarland/typescript-vim'               " Typescript syntax for vim
+Plug 'maxmellon/vim-jsx-pretty'                 " React JSX
 
 call plug#end()
 
