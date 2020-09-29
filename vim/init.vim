@@ -47,6 +47,7 @@ Plug 'rust-lang/rust.vim'
 Plug 'townk/vim-autoclose'
 Plug 'tpope/vim-fugitive'	               	" git support
 Plug 'neoclide/coc.nvim', {'branch': 'release'}	" auto completion, Lang servers ...
+" Plug 'neovim/nvim-lspconfig'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'				" fuzzy search integration
 Plug 'airblade/vim-rooter'
@@ -69,7 +70,7 @@ Plug 'omnisharp/omnisharp-vim'
 Plug 'w0rp/ale'
 Plug 'kevinhwang91/rnvimr', { 'do': 'make sync' }
 Plug 'ap/vim-css-color'                         " Self explanatory
-Plug 'iamcco/coc-angular'
+"Plug 'iamcco/coc-angular'
 Plug 'leafgarland/typescript-vim'               " Typescript syntax for vim
 Plug 'maxmellon/vim-jsx-pretty'                 " React JSX
 
