@@ -1,39 +1,39 @@
-colors:
-  # Default colors
-  primary:
-    # background: "#1e2127"
-    background: "#1a1e2d"
-    # background: "#232a38"
-    foreground: "#D8DEE9"
+#colors:
+#  # Default colors
+#  primary:
+#    # background: "#1e2127"
+#    background: "#1a1e2d"
+#    # background: "#232a38"
+#    foreground: "#D8DEE9"
 
-  # Normal colors
-  normal:
-    black: "#3B4252"
-    red: "#BF616A"
-    green: "#A3BE8C"
-    yellow: "#EBCB8B"
-    blue: "#81A1C1"
-    magenta: "#B48EAD"
-    cyan: "#88C0D0"
-    white: "#abb2bf"
+#  # Normal colors
+#  normal:
+#    black: "#3B4252"
+#    red: "#BF616A"
+#    green: "#A3BE8C"
+#    yellow: "#EBCB8B"
+#    blue: "#81A1C1"
+#    magenta: "#B48EAD"
+#    cyan: "#88C0D0"
+#    white: "#abb2bf"
 
-  # Bright colors
-  bright:
-    black: "#5c6370"
-    red: "#e06c75"
-    green: "#98c379"
-    yellow: "#d19a66"
-    blue: "#61afef"
-    #magenta: "#c678dd"
-    magenta: "#ecc3f7"
-    cyan: "#56b6c2"
-    white: "#ECEFF4"
+#  # Bright colors
+#  bright:
+#    black: "#5c6370"
+#    red: "#e06c75"
+#    green: "#98c379"
+#    yellow: "#d19a66"
+#    blue: "#61afef"
+#    #magenta: "#c678dd"
+#    magenta: "#ecc3f7"
+#    cyan: "#56b6c2"
+#    white: "#ECEFF4"
 
-background_opacity: 0.995
+#background_opacity: 0.995
 
 font:
   normal:
-      # Suitable fonts: Hack, Hack, NotoMono Nerd Font Mono
+    # Suitable fonts: Hack, Hack, NotoMono Nerd Font Mono
     family: "Hack"
     # family: "3270SemiNarrow Nerd Font Mono"
     style: Regular
@@ -47,7 +47,7 @@ font:
     family: "Hack"
     style: Regular
 
-  # Point size
+    # Point size
     size: 11.5
 
   offset:
