@@ -1,8 +1,8 @@
-#colors:
-#  # Default colors
-#  primary:
-#    # background: "#1e2127"
-#    background: "#1a1e2d"
+colors:
+  # Default colors
+  primary:
+    # background: "#1e2127"
+    background: "#1a1e2d"
 #    # background: "#232a38"
 #    foreground: "#D8DEE9"
 
