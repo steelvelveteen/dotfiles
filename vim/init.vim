@@ -36,6 +36,8 @@ endif
 
 call plug#begin('~/.vim/plugged')
 
+
+Plug 'https://github.com/joshdick/onedark.vim.git'
 Plug 'ryanoasis/vim-devicons'			" pretty icons everywhere
 Plug 'hzchirs/vim-material'			" material color themes
 Plug 'junegunn/goyo.vim'			" Zen mode
@@ -78,6 +80,8 @@ call plug#end()
 
 " Settings
 syntax on
+colorscheme onedark
+
 set hidden                              " Required to keep multiple buffers open multiple buffers
 set number relativenumber
 set autochdir " Set working directory is always the same as file being edited
