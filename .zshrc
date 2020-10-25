@@ -55,7 +55,6 @@ alias music="mpd || ncmpcpp"
 alias sourcez="source ~/.zshrc"
 alias clock="tty-clock -c -C 1 -s"
 alias repos='echo "Listing repositories ..." && cd ~/repos && ls'
-alias sys-repos='echo "Listing sys repositories ..." && cd ~/sys-repos && ls'
 alias updateDotfilesrepo='cp ~/.zshrc ~/repos/dotfiles && cp ~/.config/nvim/init.vim ~/repos/dotfiles/vim && cp ~/.config/alacritty/alacritty.yml ~/repos/dotfiles/alacritty && cd ~/repos/dotfiles && gst'
 alias backupdotfiles='cp ~/.config/nvim/init.vim ~/.config/nvim/init.vim.bak && cp ~/.zshrc ~/.zshrc.bak'
 #alias gtypist='gtypist -c 5,0 --silent'
