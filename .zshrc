@@ -19,8 +19,8 @@ export NVM_DIR="$HOME/.nvm"
 #xprop -f _KDE_NET_WM_BLUR_BEHIND_REGION 32c -set _KDE_NET_WM_BLUR_BEHIND_REGION 0 -id `xdotool search --class urxvt`
 
 # Set Spaceship ZSH as a prompt
-autoload -U promptinit; promptinit
-prompt spaceship
+#autoload -U promptinit; promptinit
+#prompt spaceship
 ZSH_THEME="spaceship"
 SPACESHIP_TIME_SHOW="true"
 
