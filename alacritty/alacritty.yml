@@ -89,3 +89,4 @@ key_bindings:
   - { key: NumpadSubtract, mods: Control, action: DecreaseFontSize }
   - { key: Minus, mods: Control, action: DecreaseFontSize }
   - { key: N, mods: Control, action: SpawnNewInstance }
+  - { Key: F11, action: ToggleFullScreen }
