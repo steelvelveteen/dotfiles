@@ -100,7 +100,9 @@ set nocursorcolumn
 set scrolljump=5
 set lazyredraw
 set synmaxcol=180
-set re=1
+" Use new regular expression engine
+" This will fix typescript syntax highlighting freezing problem
+set re=0
 set ai
 set si
 set cmdheight=2
