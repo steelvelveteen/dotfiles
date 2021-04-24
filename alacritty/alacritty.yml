@@ -29,26 +29,26 @@ colors:
 #    cyan: "#56b6c2"
 #    white: "#ECEFF4"
 
-#background_opacity: 0.995
+# background_opacity: 0.9
 
 font:
   normal:
     # Suitable fonts: Hack, Hack, NotoMono Nerd Font Mono
-    family: "Hack"
+    family: "FiraCode NF"
     # family: "3270SemiNarrow Nerd Font Mono"
     style: Regular
   bold:
-    family: "Hack"
+    family: "FiraCode NF"
     style: Regular
   italic:
-    family: "Hack"
+    family: "FiraCode NF"
     style: Italic
   bold_italic:
-    family: "Hack"
+    family: "FiraCode NF"
     style: Regular
 
     # Point size
-    size: 11.5
+  size: 11
 
   offset:
     x: 0

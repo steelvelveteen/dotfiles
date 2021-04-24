@@ -7,6 +7,8 @@ export EDITOR=$VISUAL
 export PATH
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/.dotnet/tools:$PATH"
+export DENO_INSTALL="/home/$USER/.deno"
+export PATH="$DENO_INSTALL/bin:$PATH"
 export PATH="/home/sentinel/.gem/ruby/2.6.0/bin:$PATH"
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
@@ -46,7 +48,7 @@ clear
 alias vim="nvim"
 alias neovim="nvim"
 alias cat="bat"
-alias ls="colorls"
+#alias ls="colorls"
 alias edita="nvim ~/.config/alacritty/alacritty.yml"
 alias editz="nvim ~/.zshrc"
 alias editv="nvim ~/.vimrc"
@@ -59,6 +61,10 @@ alias updateDotfilesrepo='cp ~/.zshrc ~/repos/dotfiles && cp ~/.config/nvim/init
 alias backupdotfiles='cp ~/.config/nvim/init.vim ~/.config/nvim/init.vim.bak && cp ~/.zshrc ~/.zshrc.bak'
 #alias gtypist='gtypist -c 5,0 --silent'
 alias removebeep='sudo rmmod pcspkr'
+alias update-mirrors='sudo pacman-mirrors --fasttrack && sudo pacman -Syyuu'
+alias update-mirrors-5='sudo pacman-mirrors --fasttrack 5 && sudo pacman -Syyuu'
 ###############################################################
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+eval $(thefuck --alias)

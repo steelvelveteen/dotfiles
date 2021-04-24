@@ -39,9 +39,8 @@ call plug#begin('~/.vim/plugged')
 " Color schemes first
 "
 Plug 'https://github.com/joshdick/onedark.vim.git'
-Plug 'ayu-theme/ayu-vim'
+" Plug 'ayu-theme/ayu-vim'
 Plug 'arcticicestudio/nord-vim'
-"
 Plug 'ryanoasis/vim-devicons'			" pretty icons everywhere
 Plug 'hzchirs/vim-material'			" material color themes
 Plug 'junegunn/goyo.vim'			" Zen mode
@@ -57,7 +56,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}	" auto completion, Lang servers 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'				" fuzzy search integration
 Plug 'airblade/vim-rooter'
-Plug 'farmergreg/vim-lastplace'
+Plug 'farmergreg/vim-lastplace'                 " opens file where it was last left
 Plug 'tpope/vim-surround'                       "change surrounding parenthesis
 Plug '907th/vim-auto-save'			" auto save changes
 Plug 'tpope/vim-commentary'			" better commenting
@@ -71,14 +70,12 @@ Plug 'mattn/emmet-vim'                          " emmet autocomplete for vim/neo
 Plug 'machakann/vim-highlightedyank'            " highlight yanked text
 Plug 'voldikss/vim-floaterm'                    " a floating terminal
 Plug 'pangloss/vim-javascript'
-Plug 'ThePrimeagen/vim-be-good', { 'do': './install.sh' }
-Plug 'omnisharp/omnisharp-vim'
 Plug 'w0rp/ale'
 Plug 'kevinhwang91/rnvimr', { 'do': 'make sync' }
 Plug 'ap/vim-css-color'                         " Self explanatory
 "Plug 'iamcco/coc-angular'
 Plug 'leafgarland/typescript-vim'               " Typescript syntax for vim
-Plug 'maxmellon/vim-jsx-pretty'                 " React JSX
+" Plug 'maxmellon/vim-jsx-pretty'                 " React JSX
 
 call plug#end()
 
@@ -86,7 +83,6 @@ call plug#end()
 syntax on
 " let ayucolor="dark"
 " colorscheme ayu
-" colorscheme onedark
 colorscheme nord
 
 set hidden                              " Required to keep multiple buffers open multiple buffers
@@ -185,7 +181,7 @@ let g:ale_fixers = {
 	\'c' : ['clang-format'],
 	\'*': ['remove_trailing_lines', 'trim_whitespace', 'uncrustify'],
         \'javascript': ['prettier'],
-        \'typescript': ['prettier', 'tslint'],
+        \'typescript': ['prettier', 'eslint'],
         \'cpp' : ['clang-format'],
         \'css' : ['prettier'],
         \'html' : ['prettier'],
