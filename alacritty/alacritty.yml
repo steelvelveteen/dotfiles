@@ -34,17 +34,17 @@ colors:
 font:
   normal:
     # Suitable fonts: Hack, Hack, NotoMono Nerd Font Mono
-    family: "FiraCode NF"
+    family: "Hack"
     # family: "3270SemiNarrow Nerd Font Mono"
     style: Regular
   bold:
-    family: "FiraCode NF"
+    family: "Hack"
     style: Regular
   italic:
-    family: "FiraCode NF"
+    family: "Hack"
     style: Italic
   bold_italic:
-    family: "FiraCode NF"
+    family: "Hack"
     style: Regular
 
     # Point size
