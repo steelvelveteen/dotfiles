@@ -1,19 +1,17 @@
 colors:
   # Default colors
   primary:
-    # background: "#1e2127"
-    background: "#1a1e2d"
-#    # background: "#232a38"
-#    foreground: "#D8DEE9"
+    background: "#0d1117"
+    foreground: "#D8DEE9"
 
 #  # Normal colors
 #  normal:
 #    black: "#3B4252"
-#    red: "#BF616A"
-#    green: "#A3BE8C"
-#    yellow: "#EBCB8B"
-#    blue: "#81A1C1"
-#    magenta: "#B48EAD"
+    red: "#FA7970"
+    green: "#7CE38B"
+    yellow: "#FAA356"
+    blue: "#77BDFB"
+    magenta: "#CEAF2F8"
 #    cyan: "#88C0D0"
 #    white: "#abb2bf"
 
@@ -24,27 +22,25 @@ colors:
 #    green: "#98c379"
 #    yellow: "#d19a66"
 #    blue: "#61afef"
-#    #magenta: "#c678dd"
 #    magenta: "#ecc3f7"
 #    cyan: "#56b6c2"
 #    white: "#ECEFF4"
 
-# background_opacity: 0.9
+  # background_opacity: 0.9
 
 font:
   normal:
-    # Suitable fonts: Hack, Hack, NotoMono Nerd Font Mono
-    family: "Hack"
-    # family: "3270SemiNarrow Nerd Font Mono"
+    # Suitable fonts: Hack, Hack, NotoMono Nerd Font Mono, FiraCode NF
+    family: "FiraCode NF"
     style: Regular
   bold:
-    family: "Hack"
+    family: "FiraCode NF"
     style: Regular
   italic:
-    family: "Hack"
+    family: "FiraCode NF"
     style: Italic
   bold_italic:
-    family: "Hack"
+    family: "FiraCode NF"
     style: Regular
 
     # Point size
