@@ -38,8 +38,7 @@ call plug#begin('~/.vim/plugged')
 
 " Color schemes first
 "
-Plug 'https://github.com/joshdick/onedark.vim.git'
-" Plug 'ayu-theme/ayu-vim'
+Plug 'wojciechkepka/vim-github-dark'
 Plug 'arcticicestudio/nord-vim'
 Plug 'ryanoasis/vim-devicons'			" pretty icons everywhere
 Plug 'hzchirs/vim-material'			" material color themes
@@ -52,7 +51,6 @@ Plug 'rust-lang/rust.vim'
 Plug 'townk/vim-autoclose'
 Plug 'tpope/vim-fugitive'	               	" git support
 Plug 'neoclide/coc.nvim', {'branch': 'release'}	" auto completion, Lang servers ...
-" Plug 'neovim/nvim-lspconfig'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'				" fuzzy search integration
 Plug 'airblade/vim-rooter'
@@ -73,17 +71,14 @@ Plug 'pangloss/vim-javascript'
 Plug 'w0rp/ale'
 Plug 'kevinhwang91/rnvimr', { 'do': 'make sync' }
 Plug 'ap/vim-css-color'                         " Self explanatory
-"Plug 'iamcco/coc-angular'
 Plug 'leafgarland/typescript-vim'               " Typescript syntax for vim
-" Plug 'maxmellon/vim-jsx-pretty'                 " React JSX
 
 call plug#end()
 
 " Settings
 syntax on
-" let ayucolor="dark"
-" colorscheme ayu
-colorscheme nord
+colorscheme ghdark
+" colorscheme nord
 
 set hidden                              " Required to keep multiple buffers open multiple buffers
 set number relativenumber
@@ -123,6 +118,7 @@ highlight Normal gui=none
 highlight NonText guibg=none
 highlight clear SignColumn                              " use number color for sign column color
 let g:yats_host_keyword = 1
+let g:gh_color = "soft"
 
 " Colors for git (especially the gutter)
 hi DiffAdd guibg='#0f111a'
@@ -202,7 +198,7 @@ let g:ale_fix_on_save = 1
 let g:airline#extensions#ale#enabled = 1
 
 " indentLine
-let g:indentLine_char = '▏'
+" let g:indentLine_char = '▏'
 let g:indentLine_color_gui = '#363949'
 
 " Ranger settings
@@ -220,26 +216,3 @@ let g:airline#extensions#branch#enabled=1
 
 " Airline color theme
 let g:airline_theme='material'
-
-" unicode symbols
-" let g:airline_left_sep = '»'
-" let g:airline_left_sep = '▶'
-" let g:airline_right_sep = '«'
-" let g:airline_right_sep = '◀'
-" let g:airline_symbols.linenr = '␊'
-" let g:airline_symbols.linenr = '␤'
-" let g:airline_symbols.linenr = '¶'
-" let g:airline_symbols.branch = '⎇'
-" let g:airline_symbols.paste = 'ρ'
-" let g:airline_symbols.paste = 'Þ'
-" let g:airline_symbols.paste = '∥'
-" let g:airline_symbols.whitespace = 'Ξ'
-
-" " airline symbols
-" let g:airline_left_sep = ''
-" let g:airline_left_alt_sep = ''
-" let g:airline_right_sep = ''
-" let g:airline_right_alt_sep = ''
-" let g:airline_symbols.branch = ''
-" let g:airline_symbols.readonly = ''
-" let g:airline_symbols.linenr = ''
